@@ -1,0 +1,77 @@
+package org.example;
+import java.lang.Math;
+
+public class MathOps {
+
+    public double calculateRectangleArea(double length, double width) {
+        return length * width;
+    }
+
+    public boolean isPrime(int number) {
+        if (number <= 1) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public int calculateFactorial(int n) {
+        if (n == 0 || n == 1) {
+            return 1;
+        }
+        return n * calculateFactorial(n - 1);
+    }
+
+    public String intToBinary(int number) {
+        return Integer.toBinaryString(number);
+    }
+
+    public int findMax(int num1, int num2) {
+        return Math.max(num1, num2);
+    }
+
+    public String concatenateStrings(String str1, String str2) {
+        return str1 + str2;
+    }
+
+    public int calculateSquare(int number) {
+        return number * number;
+    }
+
+    public boolean isPalindrome(String str) {
+        str = str.replaceAll("\\s+", "").toLowerCase();
+        int left = 0;
+        int right = str.length() - 1;
+        while (left < right) {
+            if (str.charAt(left) != str.charAt(right)) {
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
+    }
+
+    public double calculateAverage(int[] numbers) {
+        if (numbers.length == 0) {
+            return 0;
+        }
+        int sum = 0;
+        for (int num : numbers) {
+            sum += num;
+        }
+        return (double) sum / numbers.length;
+    }
+
+    public String[] reverseArray(String[] arr) {
+        String[] reversed = new String[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            reversed[i] = arr[arr.length - 1 - i];
+        }
+        return reversed;
+    }
+}
